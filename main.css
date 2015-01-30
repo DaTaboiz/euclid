@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box; 
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  position: relative;
+
+  background: ghostwhite;
+  font-family: sans-serif;
+
+  color: #444;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.dash {
+  padding: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+}
+
+.dash__section {
+  flex: 1;
+}
+
+.card {
+  background: white;
+  border: 1px solid rgba(0,0,0,.25);
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.card__title {
+  margin-bottom: 1rem;
+}
+
