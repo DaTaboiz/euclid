@@ -1,3 +1,20 @@
+/* Z-Indexes */
+
+.side-menu {
+  z-index: 100
+}
+
+/* Content fader */
+.main::before {
+  z-index: 1;
+}
+
+
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -14,6 +31,33 @@ h1 {
   margin: 0;
   padding: 0;
 }
+
+.main {
+  height: 100%;
+  width: 100%;
+}
+/* Fade cover */
+.main::before {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 0;
+
+  opacity: 0;
+
+  background: black;
+  content: '';
+  transition: opacity .5s, height 0s;
+  transition-delay: 0s, .5s;
+}
+
+.main.is-faded::before {
+  opacity: .5;
+  height: 100%;
+  transition-delay: 0s, 0s;
+}
+
 
 .split-menu {
   border-radius: 2px;
@@ -42,5 +86,28 @@ h1 {
   display: inline-block;
   margin-bottom: 1rem;
   margin-top: 1rem;
+}
+
+
+.side-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  height: 100%;
+  width: 30rem;
+  padding: 1rem;
+ 
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform .25s;
+
+  color: white;
+
+  background: #009688;
+}
+
+.side-menu.is-open {
+  transform: scaleX(1);
 }
 
