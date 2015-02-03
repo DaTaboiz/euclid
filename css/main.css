@@ -48,14 +48,24 @@ h1 {
 
   background: black;
   content: '';
-  transition: opacity .5s, height 0s;
-  transition-delay: 0s, .5s;
+  -webkit-transition: opacity .5s ease-out, height 0s;
+     -moz-transition: opacity .5s ease-out, height 0s;
+      -ms-transition: opacity .5s ease-out, height 0s;
+          transition: opacity .5s ease-out, height 0s;
+
+  -webkit-transition-delay: 0s, .5s;
+     -moz-transition-delay: 0s, .5s;
+      -ms-transition-delay: 0s, .5s;
+          transition-delay: 0s, .5s;
 }
 
 .main.is-faded::before {
   opacity: .5;
   height: 100%;
-  transition-delay: 0s, 0s;
+  -webkit-transition-delay: 0s, 0s;
+     -moz-transition-delay: 0s, 0s;
+      -ms-transition-delay: 0s, 0s;
+          transition-delay: 0s, 0s;
 }
 
 
