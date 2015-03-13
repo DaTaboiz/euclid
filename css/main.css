@@ -48,10 +48,10 @@ h1 {
 
   background: black;
   content: '';
-  -webkit-transition: opacity .5s ease-out, height 0s;
-     -moz-transition: opacity .5s ease-out, height 0s;
-      -ms-transition: opacity .5s ease-out, height 0s;
-          transition: opacity .5s ease-out, height 0s;
+  -webkit-transition: opacity .25s ease-out, height 0s;
+     -moz-transition: opacity .25s ease-out, height 0s;
+      -ms-transition: opacity .25s ease-out, height 0s;
+          transition: opacity .2s ease-out, height 0s;
 
   -webkit-transition-delay: 0s, .5s;
      -moz-transition-delay: 0s, .5s;
@@ -69,24 +69,68 @@ h1 {
 }
 
 
-.split-menu {
+.collapse-menu {
   border-radius: 2px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   background: #009688;
   color: white;
+  position: relative;
 }
 
-.split-menu__item {
+.collapse-menu__item,
+.collapse-menu__menu-title {
   padding: 1rem;
   padding-left: 2rem;
   padding-right: 2rem;
+  max-width: 13rem;
+  text-align: center;
   display: inline-block;
+  vertical-align: middle;
+
   cursor: pointer;
+  background-color: #009688;
 }
 
-.split-menu__item:hover {
-  background-color: rgba(255,255,255,.25);
+.collapse-menu__item:hover,
+.collapse-menu__menu-title:hover {
+  background-color: rgba(63, 175, 165, 1);
+}
+
+.collapse-menu__menu-title {
+    display: none;
+}
+
+.collapse-menu__submenu {
+    display: inline-block;
+}
+
+@media (max-width: 750px) {
+    .collapse-menu__menu-title {
+        display: inline-block;
+    }
+
+    .collapse-menu__menu-title:hover {
+        background-color: rgba(63, 175, 165, 1);
+    }
+
+    .collapse-menu__submenu {
+        position: absolute;
+    }
+
+    .collapse-menu__submenu .collapse-menu__item {
+        display: none;
+    }
+
+    .collapse-menu__submenu:hover .collapse-menu__item {
+        display: block;
+    }
+
+    .collapse-menu__submenu:hover .collapse-menu__item:last-child {
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+    }
+
 }
 
 .card {
@@ -107,7 +151,7 @@ h1 {
   height: 100%;
   width: 30rem;
   padding: 1rem;
- 
+
   transform-origin: right;
   transform: scaleX(0);
   transition: transform .25s;
@@ -120,4 +164,3 @@ h1 {
 .side-menu.is-open {
   transform: scaleX(1);
 }
-
