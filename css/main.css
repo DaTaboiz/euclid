@@ -105,34 +105,6 @@ h1 {
     display: inline-block;
 }
 
-@media (max-width: 750px) {
-    .collapse-menu__menu-title {
-        display: inline-block;
-    }
-
-    .collapse-menu__menu-title:hover {
-        background-color: rgba(63, 175, 165, 1);
-    }
-
-    .collapse-menu__submenu {
-        position: absolute;
-    }
-
-    .collapse-menu__submenu .collapse-menu__item {
-        display: none;
-    }
-
-    .collapse-menu__submenu:hover .collapse-menu__item {
-        display: block;
-    }
-
-    .collapse-menu__submenu:hover .collapse-menu__item:last-child {
-        border-bottom-left-radius: 2px;
-        border-bottom-right-radius: 2px;
-    }
-
-}
-
 .card {
   border-radius: 2px;
   background: white;
@@ -163,4 +135,10 @@ h1 {
 
 .side-menu.is-open {
   transform: scaleX(1);
+}
+
+a {
+  text-decoration: none;
+  color: #009688;
+  border-bottom: 1px dotted #009688;
 }
