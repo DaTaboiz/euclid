@@ -1,0 +1,24 @@
+>>>>A teacher wants to see the average mark on one assignment
+SELECT assignment_id, AVG((grade/max_points)*100) AS average FROM (
+( SELECT assignment_id, max_points FROM assignment) t 
+NATURAL JOIN ( SELECT assignment_id, grade FROM submission) u 
+) WHERE assignment_id='1';
+
+
+>>>>A student wants to view their mark on one assignment
+SELECT student.name, t.name AS "assignment name", t.grade FROM group_member 
+INNER JOIN student ON student.student_id=group_member.student_id 
+INNER JOIN ( 
+SELECT assignment_id, group_id, name, (grade/max_points)*100 AS grade FROM assignment NATURAL JOIN submission 
+) t ON t.group_id=group_member.group_id 
+WHERE student.name="Aaron Hourie" AND t.assignment_id='1';
+
+
+>>>>A teacher wants to retrieve all of the marks for one student
+SELECT name, assignment_id, grade FROM group_member 
+INNER JOIN student ON student.student_id=group_member.student_id 
+INNER JOIN submission ON submission.group_id=group_member.group_id
+WHERE student.student_id='11';
+
+
+>>>>A teacher wants to rank groups by best performance overall
